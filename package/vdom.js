@@ -1,6 +1,11 @@
+// Insert vdom.css into head
+let head = document.querySelector('head')
+let linkTag = document.createElement('link')
+linkTag.rel = 'stylesheet'
+linkTag.href = './package/vdom.css'
+
 // Select 'body' element
 let body = document.querySelector('body')
-console.log(body)
 
 // Build vDOM header and append to document
 let vheader = document.createElement('div')
@@ -9,7 +14,7 @@ vheader.innerHTML =
     `<div class="vdom vdomrow">
         <h1 class="vdom">Visual DOM</h1>
         <p class="vdom">~<em class="vdom">for the visual learners out there</em> 💙~</p>
-        <a href="https://github.com/cmderobertis" class="vdom" id="vdomLink">by Cameron De Robertis</a>
+        <a href="https://github.com/cmderobertis/visualDOM" class="vdom" id="vdomRepoLink">by Cameron De Robertis</a>
     </div>`
 body.appendChild(vheader)
 
