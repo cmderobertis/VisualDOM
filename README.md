@@ -1,18 +1,5 @@
-<style>
-    *{color:#B2ECFB;}
-    h1{color:white;}
-    h2{color:dodgerblue;}
-    h1 span{color:dodgerblue;}
-    img{height:2.5rem}
-    .flex{display:flex;}
-    .bg{background-color:#0D1116}
-</style>
-<div class="bg">
-
-<div class="flex">
-    <h1>Visual<span>DOM</span></h1>
-    <img src="./package/assets/vDom-logo.png" alt="vDOM logo">
-</div>
+# VisualDOM
+<img src="./package/assets/vDom-logo-w360px.png" alt="vDOM logo">
 
 *A visual representation of the Document Object Model to aid in web development.*
 
@@ -30,5 +17,3 @@
 ```<script src="./package/vdom.js"></script>```
 5. Build out your project, and VisualDOM will render additional elements in the `<body>` below your markup!
 6. Done with VisualDOM? Remove the `<link>` and `<script>` tags associated with VisualDOM, and remove 'package' directory from your project.
-
-</div>

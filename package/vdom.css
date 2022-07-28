@@ -4,13 +4,14 @@
     padding: 0;
     box-sizing: border-box;
     color: var(--vdomcontent);
-    background-color: var(--vdombg);
+    /* background-color: var(--vdombg); */
 }
 
 /* Variables */
 :root {
     --vdomcontent: white;
-    --vdombg: #333;
+    --vdom-header-bg: #223;
+    --vdombg: #222;
     --vdombg2: #777;
     --vdomaccent: #800020;
 }
@@ -18,19 +19,51 @@
 /* Flex classes */
 .vdomrow {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
     width: 100%;
-    min-height: 10px;
-    padding: 0.5rem;
+    padding: 1rem; */
+}
+
+.vdomcol {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
 }
 
 /* vDOM base styles */
-header.vdom {
-    background-color: var(--vdomaccent);
-    min-height: 10px;
+#vdomheader {
+    background-color: var(--vdom-header-bg);
+    border-radius: 12px 12px 0 0;
+    border-bottom: 4px double var(--vdomcontent);
+}
+
+.vdomLogoBox {
+    display: flex;
+    align-items: center;
+}
+
+h1 span.vdom {
+    color: dodgerblue;
+}
+
+#vdomLogo {
+    height: 4rem;
+    position: relative;
+    bottom: 3px;
+
+}
+
+.vdombody {
+    background-color: var(--vdombg);
+    border-radius: 0 0 12px 12px;
+    padding: 1rem;
 }
 
 .vdomchild {
@@ -49,9 +82,10 @@ header.vdom {
     border-radius: 12px;
     font-weight: bold;
     padding: 1rem;
+    /* This most definitely needs to go. Those properties should be in the flex classes, and the classes should update based on flex property of real element */
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 0.5rem;
     width: fit-content;
 }
 
@@ -59,6 +93,6 @@ a.vdom {
     text-decoration: none;
 }
 
-#vdomLink:hover {
+#vdomRepoLink:hover {
     text-decoration: underline;
 }
