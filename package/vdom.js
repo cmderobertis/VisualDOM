@@ -36,13 +36,7 @@ function vDiv(el) {
 
     
     // Assign attributes based on el
-    vEl.innerHTML += `<span class="vdomTagName">< ${el.tagName.toLowerCase()} ><span>`
-    if (el.classList.length) {
-        vEl.innerHTML += ` <span class="vdomClasses">${el.classList}</span>`
-    }
-    if (el.id) {
-        vEl.innerHTML += ` <span class="vdomID">${el.id}</span>`
-    }
+    vEl.innerHTML += `<span class="vdomTagName">< ${el.tagName.toLowerCase()} ><span> <span class="vdomClasses">${el.classList}</span> <span class="vdomID">${el.id}</span>`
     
     // check if el IS a parent, update classList and recursively build its children
     if (el.children.length > 0) {

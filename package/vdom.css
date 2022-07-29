@@ -89,14 +89,17 @@ h1 span.vdom {
 
 span.vdomTagName {
     color: var(--vdom-tag-name);
+    white-space: nowrap;
 }
 
 span.vdomClasses {
     color: var(--vdom-classes);
+    white-space: nowrap;
 }
 
 span.vdomID {
     color: var(--vdom-id);
+    white-space: nowrap;
 }
 
 a.vdom {
