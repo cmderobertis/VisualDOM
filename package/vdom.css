@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     color: var(--vdomcontent);
-    /* background-color: var(--vdombg); */
+    font-family:Arial, Helvetica, sans-serif
 }
 
 /* Variables */
@@ -12,19 +12,21 @@
     --vdomcontent: white;
     --vdom-header-bg: #223;
     --vdombg: #222;
-    --vdombg2: #777;
+    --vdombg2: #444;
     --vdomaccent: #800020;
+    --vdom-tag-name: dodgerblue;
+    --vdom-classes: #D64A53;
+    --vdom-id: greenyellow;
 }
 
 /* Flex classes */
 .vdomrow {
     display: flex;
-    /* flex-direction: row;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
     width: 100%;
-    padding: 1rem; */
 }
 
 .vdomcol {
@@ -34,7 +36,6 @@
     align-items: flex-start;
     gap: 1rem;
     width: 100%;
-    padding: 1rem;
 }
 
 /* vDOM base styles */
@@ -42,6 +43,7 @@
     background-color: var(--vdom-header-bg);
     border-radius: 12px 12px 0 0;
     border-bottom: 4px double var(--vdomcontent);
+    padding: 1rem;
 }
 
 .vdomLogoBox {
@@ -55,9 +57,6 @@ h1 span.vdom {
 
 #vdomLogo {
     height: 4rem;
-    position: relative;
-    bottom: 3px;
-
 }
 
 .vdombody {
@@ -68,11 +67,11 @@ h1 span.vdom {
 
 .vdomchild {
     color: var(--vdomcontent);
-    background-color: var(--vdombg2);
-    border: 3px dotted var(--vdomcontent);
+    background-color: var(--vdombg);
+    border: 2px solid var(--vdomcontent);
     border-radius: 12px;
-    padding: 0.1rem 1rem;
     width: fit-content;
+    padding: 0.1rem 0.25rem;
 }
 
 .vdomparent {
@@ -81,12 +80,23 @@ h1 span.vdom {
     border: 2px solid var(--vdomcontent);
     border-radius: 12px;
     font-weight: bold;
-    padding: 1rem;
-    /* This most definitely needs to go. Those properties should be in the flex classes, and the classes should update based on flex property of real element */
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: fit-content;
+    padding: 0rem 1rem 1rem 1rem;
+}
+
+.vdombody div.vdom:not(.vdomrow) {
+    margin-top: 1rem;
+}
+
+span.vdomTagName {
+    color: var(--vdom-tag-name);
+}
+
+span.vdomClasses {
+    color: var(--vdom-classes);
+}
+
+span.vdomID {
+    color: var(--vdom-id);
 }
 
 a.vdom {

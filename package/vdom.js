@@ -34,35 +34,33 @@ function vDiv(el) {
     let vEl = document.createElement('div')
     vEl.classList.add('vdom', 'vdomchild', `vdom${el.tagName}`)
 
+    
     // Assign attributes based on el
-        //consider using line below to insert <span>s and color-code items
-    // vEl.innerHTML = `<span class></span>`
-    vEl.innerText = `< ${el.tagName.toLowerCase()} >`
+    vEl.innerHTML += `<span class="vdomTagName">< ${el.tagName.toLowerCase()} ><span>`
     if (el.classList.length) {
-        vEl.innerText += ` ✦ ${el.classList}`
+        vEl.innerHTML += ` <span class="vdomClasses">${el.classList}</span>`
     }
     if (el.id) {
-        vEl.innerText += ` ✦ ${el.id}`
+        vEl.innerHTML += ` <span class="vdomID">${el.id}</span>`
     }
-    console.log(el.style.flexDirection)
-    if (el.style.display == 'flex') console.log('hello')
     
-    if (el.style.flexDirection == "row") {
-        // vEl.classList.add('vdomrow')
-        console.log('hello world')
-        
-    }
-    if (el.style.flexDirection == "column") {
-        vEl.classList.add('vdomcol')
-    }
-
     // check if el IS a parent, update classList and recursively build its children
     if (el.children.length > 0) {
         vEl.classList.remove('vdomchild')
         vEl.classList.add('vdomparent')
+        
+        // create container for children
+        let childBox = document.createElement('div')
+        childBox.classList.add('vdom', 'vdomchildbox')
+        vEl.appendChild(childBox)
+
+        // if el is flexed, flex the vEl
+        if (getComputedStyle(el).flexDirection == "row" && getComputedStyle(el).display == 'flex') {
+            childBox.classList.add('vdomrow')   
+        }
         let numChildren = el.children.length
         for (let i = 0; i < numChildren; i++) {
-            vEl.appendChild(vDiv(el.children[i], vEl))
+            childBox.appendChild(vDiv(el.children[i]))
         }
     }
     
