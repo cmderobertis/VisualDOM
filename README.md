@@ -20,4 +20,4 @@
 
 ## Want to contribute?
 
-This project is licenced under The MIT Open Source Licence. Feel free to fork this project or shoot me an <a href="mailto:cmderobertis@gmail.com">email.</a>
+This project is licenced under The MIT Open Source Licence. Feel free to fork this project or shoot me an <a href="mailto:cmderobertis@gmail.com">email</a>.
