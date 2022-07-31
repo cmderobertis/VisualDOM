@@ -32,11 +32,11 @@ body.appendChild(vDOM)
 function vDiv(el) {
     if (el.tagName == 'SCRIPT') return
     let vEl = document.createElement('div')
-    vEl.classList.add('vdom', 'vdomchild', `vdom${el.tagName}`)
+    vEl.classList.add('vdom', 'vdomchild', `vdom${el.tagName.toLowerCase()}`)
 
     
     // Assign attributes based on el
-    vEl.innerHTML += `<span class="vdomTagName">< ${el.tagName.toLowerCase()} ><span> <span class="vdomClasses">${el.classList}</span> <span class="vdomID">${el.id}</span>`
+    vEl.innerHTML = `<span class="vdomTagName">< ${el.tagName.toLowerCase()} ><span> <span class="vdomClasses">${el.classList}</span> <span class="vdomID">${el.id}</span>`
     
     // check if el IS a parent, update classList and recursively build its children
     if (el.children.length > 0) {

@@ -1,6 +1,6 @@
 # VisualDOM
 
-<img src="./package/assets/vDom-logo-w360px.png" alt="vDOM logo">
+<img src="./package/assets/VisualDom-Promo-small.png">
 
 *A visual representation of the Document Object Model to aid in web development.*
 
@@ -9,6 +9,8 @@
 - Parses HTML and generates new elements at the end of your `<body>`, visualizing nested children in your markup.
 - Each node provides the element's tag name, classes, and ID, color-coded for easy identification.
 - Managing 100+ `<div>`s has never been this easy!
+
+<img src="./package/assets/vdom-screenshot.png">
 
 ## How to use this in your project
 
